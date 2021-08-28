@@ -111,6 +111,7 @@ status_t primitive_create(primitive_iface_t **primitive_iface,
     return safe_ptr_assign((*primitive_iface), p_iface.first);
 }
 
+// TODO: do not allow to use this API for OOO queues.
 status_t primitive_execute(
         const primitive_iface_t *primitive_iface, exec_ctx_t &ctx) {
     auto stream = ctx.stream();
