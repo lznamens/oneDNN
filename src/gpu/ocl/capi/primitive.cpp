@@ -42,9 +42,9 @@ status_t dnnl_ocl_interop_primitive_execute(
 
     auto *ocl_stream = utils::downcast<gpu::ocl::ocl_stream_t *>(stream);
 
-    if (ocl_stream->flags() & stream_flags::in_order) {
-        return status::invalid_arguments;
-    }
+    //if (ocl_stream->flags() & stream_flags::in_order) {
+    //    return status::invalid_arguments;
+    //}
 
     if (deps != nullptr) {
         std::vector<cl_event> events(ndeps);

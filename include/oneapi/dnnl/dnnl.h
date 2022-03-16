@@ -3761,6 +3761,8 @@ dnnl_status_t DNNL_API dnnl_stream_get_engine(
 ///     otherwise.
 dnnl_status_t DNNL_API dnnl_stream_wait(dnnl_stream_t stream);
 
+dnnl_status_t DNNL_API dnnl_stream_flush(dnnl_stream_t stream);
+
 /// Destroys an execution stream.
 ///
 /// @param stream Execution stream to destroy.

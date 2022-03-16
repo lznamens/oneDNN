@@ -74,6 +74,11 @@ struct ocl_stream_t : public compute::compute_stream_t {
         return status::success;
     }
 
+    status_t flush() override {
+        OCL_CHECK(clFlush(queue_));
+        return status::success;
+    }
+
     cl_command_queue queue() const { return queue_; }
 
     status_t copy(const memory_storage_t &src, const memory_storage_t &dst,

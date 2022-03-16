@@ -47,6 +47,8 @@ struct dnnl_stream : public dnnl::impl::c_compatible {
     /** blocks until all submitted primitives to the stream are completed */
     virtual dnnl::impl::status_t wait() = 0;
 
+    virtual dnnl::impl::status_t flush() = 0;
+
     virtual void before_exec_hook() {}
     virtual void after_exec_hook() {}
 

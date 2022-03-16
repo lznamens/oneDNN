@@ -57,6 +57,13 @@ status_t dnnl_stream_wait(stream_t *stream) {
     return stream->wait();
 }
 
+status_t dnnl_stream_flush(stream_t *stream) {
+    bool args_ok = !any_null(stream);
+    if (!args_ok) return invalid_arguments;
+
+    return stream->flush();
+}
+
 status_t dnnl_stream_destroy(stream_t *stream) {
     delete stream;
     return success;
